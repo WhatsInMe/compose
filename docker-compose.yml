@@ -21,8 +21,6 @@ services:
   app:
     depends_on:
       - api
-    image: yw/wyatsinme-app
+    image: yw/whatsinme-app
     ports:
       - 5002:80
-    environment:
-      API: http://api
