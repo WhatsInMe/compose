@@ -9,8 +9,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
   api:
-    build:
-      context: ../api
     depends_on:
       - db
     image: yw/whatsinme-api
@@ -21,8 +19,6 @@ services:
       DB_USER: postgres
       DB_PASS: postgres
   app:
-    build:
-      context: ../app
     depends_on:
       - api
     image: yw/wyatsinme-app
