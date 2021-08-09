@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    network_mode: host
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  api:
+    depends_on:
+      - db
+    image: yw/whatsinme-api
+    restart: always
+    network_mode: host
+    # ports:
+    #   - 5003:80
+    environment:
+      SERVER_PORT: 8081
+      DB_URL: jdbc:postgresql://127.0.0.1/postgres
+      DB_USER: postgres
+      DB_PASS: postgres
+  app:
+    depends_on:
+      - api
+    image: yw/whatsinme-app-dev
+    restart: always
+    network_mode: host
