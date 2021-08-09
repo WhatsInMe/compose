@@ -5,7 +5,7 @@ pushd ../api
 docker build -t yw/whatsinme-api .
 popd
 pushd ../app
-npm run build
+npm run build-local
 docker build -t yw/whatsinme-app-dev -f Dockerfile-dev .
 popd
 docker-compose -f docker-compose-dev.yml up -d
