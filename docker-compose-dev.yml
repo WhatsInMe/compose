@@ -15,8 +15,6 @@ services:
     image: yw/whatsinme-api
     restart: always
     network_mode: host
-    # ports:
-    #   - 5003:80
     environment:
       SERVER_PORT: 8081
       DB_URL: jdbc:postgresql://127.0.0.1/postgres

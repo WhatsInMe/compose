@@ -1,4 +1,5 @@
 docker-compose down
+docker rmi -f $(docker images -f "dangling=true" -q)
 pushd ../api
 ./mvnw clean package
 docker build -t yw/whatsinme-api .
