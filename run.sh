@@ -6,7 +6,7 @@ docker build -t yw/whatsinme-api .
 popd
 
 pushd ../app
-npm run build-local
+npm run build
 docker build -t yw/whatsinme-app-dev -f Dockerfile-dev .
 popd
 
